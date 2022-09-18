@@ -1,10 +1,4 @@
-/**
-* Template Name: Arsha - v4.9.0
-* Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-(function() {
+(function () {
   "use strict";
 
   /**
@@ -109,7 +103,7 @@
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
+  on('click', '.mobile-nav-toggle', function (e) {
     select('#navbar').classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
@@ -118,7 +112,7 @@
   /**
    * Mobile nav dropdowns activate
    */
-  on('click', '.navbar .dropdown > a', function(e) {
+  on('click', '.navbar .dropdown > a', function (e) {
     if (select('#navbar').classList.contains('navbar-mobile')) {
       e.preventDefault()
       this.nextElementSibling.classList.toggle('dropdown-active')
@@ -128,7 +122,7 @@
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
-  on('click', '.scrollto', function(e) {
+  on('click', '.scrollto', function (e) {
     if (select(this.hash)) {
       e.preventDefault()
 
@@ -179,7 +173,7 @@
     new Waypoint({
       element: skilsContent,
       offset: '80%',
-      handler: function(direction) {
+      handler: function (direction) {
         let progress = select('.progress .progress-bar', true);
         progress.forEach((el) => {
           el.style.width = el.getAttribute('aria-valuenow') + '%'
@@ -200,9 +194,9 @@
 
       let portfolioFilters = select('#portfolio-flters li', true);
 
-      on('click', '#portfolio-flters li', function(e) {
+      on('click', '#portfolio-flters li', function (e) {
         e.preventDefault();
-        portfolioFilters.forEach(function(el) {
+        portfolioFilters.forEach(function (el) {
           el.classList.remove('filter-active');
         });
         this.classList.add('filter-active');
@@ -210,7 +204,7 @@
         portfolioIsotope.arrange({
           filter: this.getAttribute('data-filter')
         });
-        portfolioIsotope.on('arrangeComplete', function() {
+        portfolioIsotope.on('arrangeComplete', function () {
           AOS.refresh()
         });
       }, true);
@@ -254,4 +248,21 @@
     });
   });
 
+  window.addEventListener('submit', (event) => {
+    var playlists = [
+      "https://open.spotify.com/embed/playlist/4nd7oGDNgfM0rv28CQw9WQ?utm_source=generator",
+      "https://open.spotify.com/embed/playlist/0jrlHA5UmxRxJjoykf7qRY?utm_source=generator",
+      "https://open.spotify.com/embed/playlist/37i9dQZF1EVJSvZp5AOML2?utm_source=generator",
+      "https://open.spotify.com/embed/playlist/4YOfhHpjPB0tq29NPpDY3F?utm_source=generator",
+      "https://open.spotify.com/embed/playlist/1eRXF5lCwXzXArmtULo4Ji?utm_source=generator",
+      "https://open.spotify.com/embed/playlist/2eyd7e5XUuSvZsX6BLzlNq?utm_source=generator",
+      "https://open.spotify.com/embed/playlist/3eePXCTXTVgjTOw2JyEMyj?utm_source=generator",
+      "https://open.spotify.com/embed/playlist/1qH0ldXYfQeyHt2HTk7qyW?utm_source=generator",
+      "https://open.spotify.com/embed/playlist/37i9dQZF1DWY1kDGbdPb81?utm_source=generator"
+    ]
+    var x = document.getElementById("playlist");
+    const p = document.createElement("div");
+    p.innerHTML = `<iframe style="border-radius:12px" src={playlists[Math.floor(Math.random() * playlists.length)]} width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
+    x.body.append(p)
+  })
 })()
