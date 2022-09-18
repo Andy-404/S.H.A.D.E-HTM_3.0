@@ -262,8 +262,5 @@
       "https://open.spotify.com/embed/playlist/37i9dQZF1DWY1kDGbdPb81?utm_source=generator"
     ]
     var x = document.getElementById("playlist").innerHTML = `<iframe style="border-radius:12px" src=${playlists[Math.floor(Math.random() * playlists.length)]} width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
-    // const p = document.createElement("div");
-    // p.innerHTML = `<iframe style="border-radius:12px" src=`{ playlists[Math.floor(Math.random() * playlists.length)] } ` width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
-    // x.body.appendChild(p);
   })
 })()
